@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1>Header</h1>
+        <h1 id="header">Header</h1>
     </header>
     <section>
         <nav>
@@ -19,12 +19,8 @@
                 <li><a href="#">Articles</a></li>
             </ul>
         </nav>
-        <article>
-            <h2>Article heading</h2>
-            <p>Paragraph...</p>
-            <a href="https://www.google.com/">More information...</a>
-        </article>
-        <aside>
+        <img src="./img/newProduct.png" alt="A product!" width="30%" height="30%">
+        <aside id="aside">
             <h2>Related</h2>
             <ul>
                 <li><a href="#">Article 1</a></li>
@@ -32,13 +28,30 @@
             </ul>
         </aside>
     </section>
+
+    <section>
+        <form>
+            <label for="shippingName">Name</label>
+            <input type="text" id="shippingName" name="shippingName"><br>
+            <label for="shippingAddress">Address</label>
+            <input type="text" id="shippingAddress" name="shippingAddress"><br>
+            <label for="shippingEmail">Email</label>
+            <input type="email" id="shippingEmail" name="shippingEmail"><br>
+            <input type="button" onclick="ShowShippingPopUp()" value="Order Now">
+        </form>
+    </section>
     <footer>
         <p>@copyright 2050 by nobody. all rights reversed</p>
     </footer>
 </body>
 
 <script>
-    document.getElementById("demo").style.color = "red";
+    document.getElementById("header").innerText = 'Hello JavaScript';
+    document.getElementById("aside").style.backgroundColor = 'green';
+
+    function ShowShippingPopUp() {
+        alert("Your order will be shipped shortly!")
+    }
 </script>
 
 </html>
