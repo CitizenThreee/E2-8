@@ -1,6 +1,5 @@
 var Sentiment = require('sentiment');
 
-
 function AnalyzeSentence(sentence){
     var sentiment = new Sentiment();
 
@@ -8,4 +7,4 @@ function AnalyzeSentence(sentence){
     return result.score;
 }
 
-console.log(AnalyzeSentence("This is a good sentence"));
+console.log(AnalyzeSentence("This is a bad sentence"));
