@@ -19,25 +19,25 @@
                 <td><button onclick="ConcatenateNumber(7)">7</button></td>
                 <td><button onclick="ConcatenateNumber(8)">8</button></td>
                 <td><button onclick="ConcatenateNumber(9)">9</button></td>
-                <td><button onclick="CommitOperation(0)">+</button></td>
+                <td><button onclick="CommitOperation('+')">+</button></td>
             </tr>
             <tr>
                 <td><button onclick="ConcatenateNumber(4)">4</button></td>
                 <td><button onclick="ConcatenateNumber(5)">5</button></td>
                 <td><button onclick="ConcatenateNumber(6)">6</button></td>
-                <td><button onclick="CommitOperation(1)">-</button></td>
+                <td><button onclick="CommitOperation('-')">-</button></td>
             </tr>
             <tr>
                 <td><button onclick="ConcatenateNumber(1)">1</button></td>
                 <td><button onclick="ConcatenateNumber(2)">2</button></td>
                 <td><button onclick="ConcatenateNumber(3)">3</button></td>
-                <td><button onclick="CommitOperation(2)">*</button></td>
+                <td><button onclick="CommitOperation('*')">*</button></td>
             </tr>
             <tr>
-                <td><button onclick="CommitOperation(4)">%</button></td>
+                <td><button onclick="CommitOperation('%')">%</button></td>
                 <td><button onclick="ConcatenateNumber(0)">0</button></td>
-                <td><button onclick="CommitOperation(3)">/</button></td>
-                <td><button onclick="CommitOperation(5)">=</button></td>
+                <td><button onclick="CommitOperation('/')">/</button></td>
+                <td><button onclick="CommitOperation('')">=</button></td>
             </tr>
         </table>
     </div>
@@ -47,7 +47,7 @@
     let value = "";
     let newNumber;
     let result;
-    let operator;
+    let operator = "";
 
     function CommitOperation(newOperator){
         if(newNumber != "" & newNumber != undefined){
@@ -55,28 +55,24 @@
             newNumber = Number(newNumber);
             
             switch (operator){
-                case 0: {
+                case "+": {
                     value += newNumber;
                     break;
                 }
-                case 1: {
+                case "-": {
                     value -= newNumber;
                     break;
                 }
-                case 2: {
+                case "*": {
                     value *= newNumber;
                     break;
                 }
-                case 3: {
+                case "/": {
                     value /= newNumber;
                     break;
                 }
-                case 4: {
+                case "%": {
                     value %= newNumber;
-                    break;
-                }
-                case 5: {
-                    value = value;
                     break;
                 }
                 default: {
@@ -96,35 +92,7 @@
     }
 
     function ChangeText(){
-        let operatorSymbol = "";
-
-        switch (operator){
-            case 0: {
-                operatorSymbol = "+";
-                break;
-            }
-            case 1: {
-                operatorSymbol = "-";
-                break;
-            }
-            case 2: {
-                operatorSymbol = "*";
-                break;
-            }
-            case 3: {
-                operatorSymbol = "/";
-                break;
-            }
-            case 4: {
-                operatorSymbol = "%";
-                break;
-            }
-            default: {
-                operatorSymbol = "";
-            }
-        }
-        
-        document.getElementById("result").innerHTML = value + " " + operatorSymbol + " " + newNumber;
+        document.getElementById("result").innerHTML = value + " " + operator + " " + newNumber;
     }
 </script>
 </html>
