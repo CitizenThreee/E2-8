@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Balance</title>
+
+    <link rel="stylesheet" href="balance.css">
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div id="page">
+        <div id="box">
+            <div>
+                <h1 id="balanceText">Bank Balance:</h1>
+                <p id="balance">100</p>
+            </div>
+            
+            <hr>
+
+            <div id="accessFunds">
+                <label for="amount">Amount: </label>
+                <input type="number" id="amount" name="amount" value = 0>
+                <input type="button" value="Deposit" onclick="Deposit()">
+                <input type="button" value="Withdraw" onclick="Withdraw()">
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+<script>
+    let balance = 100;
+    UpdateBal();
+
+    function UpdateBal(){
+        document.getElementById("balance").innerHTML = balance;
+    }   
+
+    function Deposit(){
+        if(document.getElementById("amount").value > 0){
+            balance += Number(document.getElementById("amount").value);
+        }
+        
+        document.getElementById("amount").value = 0;
+        UpdateBal();
+    }
+    
+    function Withdraw(){
+        if(balance > document.getElementById("amount").value && document.getElementById("amount").value > 0){
+            balance -= Number(document.getElementById("amount").value);
+        }
+        
+        document.getElementById("amount").value = 0;
+        UpdateBal();
+    }
+
+</script>
+</html>
