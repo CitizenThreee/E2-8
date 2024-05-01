@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <div id="calculator">
+        <div id="resultBox">
+            <h1 id="result"></h1>
+        </div>
+
+        <table id="buttons">
+            <tr>
+                <td><button onclick="ConcatenateNumber(7)">7</button></td>
+                <td><button onclick="ConcatenateNumber(8)">8</button></td>
+                <td><button onclick="ConcatenateNumber(9)">9</button></td>
+                <td><button onclick="CommitOperation(0)">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ConcatenateNumber(4)">4</button></td>
+                <td><button onclick="ConcatenateNumber(5)">5</button></td>
+                <td><button onclick="ConcatenateNumber(6)">6</button></td>
+                <td><button onclick="CommitOperation(1)">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ConcatenateNumber(1)">1</button></td>
+                <td><button onclick="ConcatenateNumber(2)">2</button></td>
+                <td><button onclick="ConcatenateNumber(3)">3</button></td>
+                <td><button onclick="CommitOperation(2)">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="CommitOperation(4)">%</button></td>
+                <td><button onclick="ConcatenateNumber(0)">0</button></td>
+                <td><button onclick="CommitOperation(3)">/</button></td>
+                <td><button onclick="CommitOperation(5)">=</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    let value = "";
+    let newNumber;
+    let result;
+    let operator;
+
+    function CommitOperation(newOperator){
+        if(newNumber != "" & newNumber != undefined){
+            value = Number(value);
+            newNumber = Number(newNumber);
+            
+            switch (operator){
+                case 0: {
+                    value += newNumber;
+                    break;
+                }
+                case 1: {
+                    value -= newNumber;
+                    break;
+                }
+                case 2: {
+                    value *= newNumber;
+                    break;
+                }
+                case 3: {
+                    value /= newNumber;
+                    break;
+                }
+                case 4: {
+                    value %= newNumber;
+                    break;
+                }
+                case 5: {
+                    value = value;
+                    break;
+                }
+                default: {
+                    value = newNumber;
+                }
+            }
+        }
+        
+        newNumber = "";
+        operator = newOperator;
+        ChangeText();
+    }
+
+    function ConcatenateNumber(number){
+        newNumber = newNumber != undefined ? String(newNumber) + String(number) : number;
+        ChangeText();
+    }
+
+    function ChangeText(){
+        let operatorSymbol = "";
+
+        switch (operator){
+            case 0: {
+                operatorSymbol = "+";
+                break;
+            }
+            case 1: {
+                operatorSymbol = "-";
+                break;
+            }
+            case 2: {
+                operatorSymbol = "*";
+                break;
+            }
+            case 3: {
+                operatorSymbol = "/";
+                break;
+            }
+            case 4: {
+                operatorSymbol = "%";
+                break;
+            }
+            default: {
+                operatorSymbol = "";
+            }
+        }
+        
+        document.getElementById("result").innerHTML = value + " " + operatorSymbol + " " + newNumber;
+    }
+</script>
+</html>
