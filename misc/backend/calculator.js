@@ -39,14 +39,13 @@ function Mul(args){
 }
 
 function Dif(a, b){
-    let dif = 0; 
+    return a > b ? a - b : b - a;
+}
 
-    for(let i = 0; i < args.length; i++){
-        sum -= args[i];
-    }
-
-    return dif;
+function Abs(value) {
+    return value < 0 ? -value : value;
 }
 
 console.log(Mul([4, 6, 1, 7]));
-
+console.log(Abs(-10));
+console.log(Dif(3, 10));
