@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+
+    <link rel="stylesheet" href="randomNumber.css">
+</head>
+<body>
+    <div id="container">
+        <div id="messageBox">
+            <p id="message">Correct!!</p>
+        </div>
+        
+        <div id="numberBox">
+            <label for="numberInput" id="numberInputLabel">CHOOSE YOUR NUMBER:</label>
+        <input type="number" onchange="ValidateNumberInput(value)" id="numberInput" name="numberInput" value="1">
+        </div>
+        <button id="button" onclick="Guess()">GUESS!!</button>
+    </div>
+</body>
+
+<script src="randomLogic.js"></script>
+</html>

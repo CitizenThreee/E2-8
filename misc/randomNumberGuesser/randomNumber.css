@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    max-width: 800px;
+    height: 100%;
+    margin: 0px auto 0px auto;
+}
+
+#numberInputLabel {
+    color: white;
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+#numberInput {
+    padding-left: 10px;
+    height: 40px;
+    font-size: 25px;
+}
+
+#numberBox {
+    margin-bottom: 20px;
+}
+
+#button {
+    padding: 20px 60px;
+    font-size: 25px;
+}
+
+#messageBox {
+    display: none;
+    background-color: rgb(201, 53, 53);
+    padding: 0px 100px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+#message {
+    line-height: 0;
+    color: black;
+    font-size: 20px;
+}
