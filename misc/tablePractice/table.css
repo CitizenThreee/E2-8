@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+table {
+    border: 1px solid black;
+    border-top-color: lightgray;
+    border-left-color: lightgray;
+}
+
+td, th {
+    border: 1px solid black;
+    border-bottom-color: lightgray;
+    border-right-color: lightgray;
+}
+
+thead {
+    background-color: green;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: red;
+}
